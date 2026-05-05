@@ -132,7 +132,7 @@
   - 音乐生成：`mmx music generate`（100/周）
   - 视觉理解：`mmx vision describe`
   - 网络搜索：`mmx search query`（首选用联网搜索，不用模型本地知识）
-- **输出目录**：无需额外配置，脚本产出写入 `D:/Raymondstudio/04-脚本/`，分镜表写入 `D:/Raymondstudio/05-分镜表/`
+- **输出目录**：无需额外配置，脚本产出写入 `D:/Raymondstudio/03-脚本/`，分镜表写入 `D:/Raymondstudio/04-分镜表/`
 
 ### Office 处理环境
 - **依赖**：openpyxl、python-docx、python-pptx、pypdf
@@ -208,7 +208,7 @@
 - [ ] **工作区三（管理与复盘）**：已创建，角色=管理员，Skills=tool-builder/find-skills/xlsx，思考=默认关闭
 - [ ] **各区的 Skills**：已按上述列表安装到各自工作区，不混装
 - [ ] **各区的 workspace-files**：已指向本仓库（内容生产系统配置）
-- [ ] **Obsidian 目录**：`D:/Raymondstudio/` 已存在且包含完整文件夹结构：`00-Inbox`, `01-选题`, `02-产品资料`, `04-脚本`, `05-分镜表`, `06-复盘`, `99-Archive`
+- [ ] **Obsidian 目录**：`D:/Raymondstudio/` 已存在且包含完整文件夹结构：`00-Inbox`, `01-选题`, `02-产品资料`, `03-脚本`, `04-分镜表`, `05-复盘`, `99-Archive`
 - [ ] **路径一致性**：所有文件中 Obsidian 路径统一为 `D:/Raymondstudio/`，无旧路径残留
 
 ### 部署审计命令
@@ -217,7 +217,7 @@
 ```
 check workspace count in agent-workspaces.json → 必须 = 3
 check skills per workspace → 必须匹配上述清单
-check Obsidian folder structure → 必须包含：00-Inbox, 01-选题, 02-产品资料, 04-脚本, 05-分镜表, 06-复盘, 99-Archive
+check Obsidian folder structure → 必须包含：00-Inbox, 01-选题, 02-产品资料, 03-脚本, 04-分镜表, 05-复盘, 99-Archive
 check CLAUDE.md path references → 无 ~/Documents/JJXS_Studio 残留
 ```
 
