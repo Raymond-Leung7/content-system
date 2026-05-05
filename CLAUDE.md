@@ -77,7 +77,6 @@
 ## 重要目录
 
 - **Obsidian 内容资产目录**：`~/Documents/鉴机行事/`
-- **OpenClaw workspace**：`~/.openclaw/workspace/`
 - **Obsidian 默认仓库**：鉴机行事
 
 ## 工具环境
@@ -94,9 +93,8 @@
 - **输出目录**：语音 → `鉴机行事/资产/语音/`，音乐 → `鉴机行事/资产/音乐/`，图片 → `鉴机行事/资产/图片/`
 
 ### Office 处理环境
-- **Python venv**：`~/.openclaw/workspace/skills/openclaw-office-toolkit/.venv/bin/python`
-- **已安装**：openpyxl、python-docx、python-pptx、pypdf
-- 涉及 Excel/Word/PPT/PDF 优先走此环境
+- **依赖**：openpyxl、python-docx、python-pptx、pypdf
+- 涉及 Excel/Word/PPT/PDF 的输出需要用这些库
 
 ### 浏览器自动化
 - **Playwright venv**：`~/.venvs/browser-auto/`
@@ -106,8 +104,7 @@
 ### Ollama 本地语义搜索
 - **端口**：http://127.0.0.1:11434（Ollama）/ v1/embeddings
 - **模型**：mxbai-embed-large
-- **用途**：memory-lancedb 向量 embedding 语义搜索
-- **管理**：`source ~/.zshrc && openclaw ltm stats`
+- **用途**：本地向量 embedding 语义搜索
 
 ## 协作偏好
 
