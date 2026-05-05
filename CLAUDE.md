@@ -163,6 +163,36 @@
 - 每个来源标注必须可追溯，不能从搜索结果推断来源类型
 - 涉及散热/性能/续航等需实测验证的数据标记为 [待实测]，不直接引用二手评测
 
+## 工作区架构
+
+本系统拆分为三个 Proma 工作区，按任务性质隔离上下文和 Skills。当前工作区的角色规则优先于通用规则。
+
+### 工作区一：研究与资料
+- **模型**：DeepSeek V4-Pro，思考模式**开启**
+- **角色**：研究员 — 只做产品资料 + 竞品分析，不生成脚本和分镜
+- **Skills**：xlsx（竞品对比表）、pdf（spec PDF）、find-skills
+- **详细规则**：`workspaces/research-rules.md`
+
+### 工作区二：脚本与分镜
+- **模型**：DeepSeek V4-Pro，思考模式**开启**
+- **角色**：脚本写手 — 基于已有产品资料生成脚本骨架 → 口播稿 → 润色 → 分镜表
+- **Skills**：xlsx（分镜表）、brainstorming（角度推敲）、executing-plans
+- **详细规则**：`workspaces/script-rules.md`
+
+### 工作区三：管理与复盘
+- **模型**：DeepSeek V4-Pro，思考模式**默认关闭**（复盘和策略分析时手动开启）
+- **角色**：系统管理员 — 资讯处理、选题筛选、四层复盘、系统规则迭代
+- **Skills**：tool-builder、find-skills、xlsx（复盘数据表）
+- **详细规则**：`workspaces/management-rules.md`
+
+### 跨区衔接
+三个工作区通过 Obsidian（`~/Documents/JJXS_Studio/`）共享文件：
+- 资讯/选题 → 管理与复盘区
+- 产品资料/竞品分析 → 研究与资料区 → Obsidian → 脚本与分镜区
+- 脚本/分镜 → Obsidian → 发布后 → 管理与复盘区做复盘
+
+切换工作区只在需要换阶段时发生。
+
 ## 禁止事项
 
 - ❌ 不擅自扩展范围 — 不擅自扩大战线
