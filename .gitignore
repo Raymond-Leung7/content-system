@@ -1,0 +1,16 @@
+# 个人记忆（勿提交）
+memory/
+
+# 敏感配置
+.claude/settings.json
+*.env
+.env.*
+credentials*
+
+# API keys / tokens（绝对红线）
+*key*
+*token*
+*secret*
+
+# macOS
+.DS_Store
