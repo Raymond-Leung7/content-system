@@ -39,7 +39,7 @@
 
 1. 资讯进入 **Inbox（00-Inbox）**
 2. 主理人判断是否立项（候选 → 已立项）
-3. 做产品资料 + 竞品分析
+3. 做产品资料（含竞品分析）
 4. 做角度与脚本（含脚本骨架 / 口播稿）
 5. 主理人审稿
 6. 人工拍摄发布（生成分镜表、Excel 执行表）
@@ -61,7 +61,7 @@
 | 1 | 官方规格、定价、发布信息 | 品牌官网 / Apple.cn / 京东旗舰店 | mmx search 搜索官方页面，直接抓取 |
 | 2 | 核心技术解析 | 官方技术文档 + 媒体深度评测 | 理解技术原理，不只复述参数 |
 | 3 | 性能数据、媒体评测 | 多源交叉 | mmx search + WebFetch，至少 3 个来源 |
-| 4 | 竞品概况 | 京东/天猫 + 媒体评测 + 什么值得买 | 竞品参数+价格，详细分析走 `03-竞品分析/` |
+| 4 | 竞品概况 | 京东/天猫 + 媒体评测 + 什么值得买 | 竞品参数+价格，详细分析记入 `02-产品资料/` 同产品目录 |
 | 5 | 社区口碑、品控问题 | 什么值得买、B站评论区、贴吧、知乎 | 找真实用户评价，区分普遍问题 vs 个例 |
 | 6 | 交叉验证、标注可信度 | — | 每项数据标注 🔒官方 / ✅多源 / ⚠️单源 / ⏳待核实 |
 | 7 | 写"交付脚本的关键结论" | — | 模板第九章，直接喂给脚本阶段 |
@@ -132,7 +132,7 @@
   - 音乐生成：`mmx music generate`（100/周）
   - 视觉理解：`mmx vision describe`
   - 网络搜索：`mmx search query`（首选用联网搜索，不用模型本地知识）
-- **输出目录**：语音 → `D:/Raymondstudio/资产/语音/`，音乐 → `D:/Raymondstudio/资产/音乐/`，图片 → `D:/Raymondstudio/资产/图片/`
+- **输出目录**：无需额外配置，脚本产出写入 `D:/Raymondstudio/04-脚本/`，分镜表写入 `D:/Raymondstudio/05-分镜表/`
 
 ### Office 处理环境
 - **依赖**：openpyxl、python-docx、python-pptx、pypdf
@@ -170,7 +170,7 @@
 
 ### 工作区一：研究与资料
 - **模型**：DeepSeek V4-Pro，思考模式**开启**
-- **角色**：研究员 — 只做产品资料 + 竞品分析，不生成脚本和分镜
+- **角色**：研究员 — 只做产品资料（含竞品分析），不生成脚本和分镜
 - **Skills**：xlsx（竞品对比表）、pdf（spec PDF）、find-skills
 - **详细规则**：`workspaces/research-rules.md`
 
@@ -189,7 +189,7 @@
 ### 跨区衔接
 三个工作区通过 Obsidian（`D:/Raymondstudio/`）共享文件：
 - 资讯/选题 → 管理与复盘区
-- 产品资料/竞品分析 → 研究与资料区 → Obsidian → 脚本与分镜区
+- 产品资料（含竞品分析）→ 研究与资料区 → Obsidian → 脚本与分镜区
 - 脚本/分镜 → Obsidian → 发布后 → 管理与复盘区做复盘
 
 切换工作区只在需要换阶段时发生。
@@ -208,7 +208,7 @@
 - [ ] **工作区三（管理与复盘）**：已创建，角色=管理员，Skills=tool-builder/find-skills/xlsx，思考=默认关闭
 - [ ] **各区的 Skills**：已按上述列表安装到各自工作区，不混装
 - [ ] **各区的 workspace-files**：已指向本仓库（内容生产系统配置）
-- [ ] **Obsidian 目录**：`D:/Raymondstudio/` 已存在且包含完整文件夹结构（00-Inbox ~ 99-Archive + 资产/）
+- [ ] **Obsidian 目录**：`D:/Raymondstudio/` 已存在且包含完整文件夹结构：`00-Inbox`, `01-选题`, `02-产品资料`, `04-脚本`, `05-分镜表`, `06-复盘`, `99-Archive`
 - [ ] **路径一致性**：所有文件中 Obsidian 路径统一为 `D:/Raymondstudio/`，无旧路径残留
 
 ### 部署审计命令
@@ -217,7 +217,7 @@
 ```
 check workspace count in agent-workspaces.json → 必须 = 3
 check skills per workspace → 必须匹配上述清单
-check Obsidian folder structure → 所有目录必须存在
+check Obsidian folder structure → 必须包含：00-Inbox, 01-选题, 02-产品资料, 04-脚本, 05-分镜表, 06-复盘, 99-Archive
 check CLAUDE.md path references → 无 ~/Documents/JJXS_Studio 残留
 ```
 
