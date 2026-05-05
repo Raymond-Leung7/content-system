@@ -8,7 +8,7 @@
 ### 核心分工
 - **Raymond**：只做判断 — 选题判断、审稿判断、复盘确认
 - **Proma Agent**：负责执行、调度、整理、沉淀、优化
-- **Obsidian（鉴机行事）**：负责资产沉淀
+- **Obsidian（JJXS_Studio）**：负责资产沉淀
 
 ## 系统优先级
 
@@ -76,8 +76,8 @@
 
 ## 重要目录
 
-- **Obsidian 内容资产目录**：`~/Documents/鉴机行事/`
-- **Obsidian 默认仓库**：鉴机行事
+- **Obsidian 内容资产目录**：`~/Documents/JJXS_Studio/`
+- **Obsidian 默认仓库**：JJXS_Studio
 
 ## 工具环境
 
@@ -90,7 +90,7 @@
   - 音乐生成：`mmx music generate`（100/周）
   - 视觉理解：`mmx vision describe`
   - 网络搜索：`mmx search query`（首选用联网搜索，不用模型本地知识）
-- **输出目录**：语音 → `鉴机行事/资产/语音/`，音乐 → `鉴机行事/资产/音乐/`，图片 → `鉴机行事/资产/图片/`
+- **输出目录**：语音 → `JJXS_Studio/资产/语音/`，音乐 → `JJXS_Studio/资产/音乐/`，图片 → `JJXS_Studio/资产/图片/`
 
 ### Office 处理环境
 - **依赖**：openpyxl、python-docx、python-pptx、pypdf
