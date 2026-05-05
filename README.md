@@ -33,4 +33,16 @@ Proma 会自动完成所有操作。
 
 ## 维护
 
-系统更新后，告诉 Proma：**"帮我拉取最新的系统配置"**。
+**系统更新后（团队成员）：** 告诉 Proma：**"帮我拉取最新的系统配置"**。
+
+**推送更新（系统维护者）：** 告诉 Proma：**"请把我的本地配置推送到内容系统仓库"**。Proma 会把当前 workspace-files 的改动提交并推送到 GitHub。
+
+## 首次推送配置（系统搭建者）
+
+如果你是第一次搭建这套系统，告诉 Proma：
+
+> 请帮我把当前这套 Proma 配置上传到 GitHub 内容系统仓库。
+> 
+> 1. 初始化 workspace-files 为 Git 仓库
+> 2. 添加并提交所有文件（排除个人记忆和 API key）
+> 3. 推送到：`https://github.com/Raymond-Leung7/content-system.git`
