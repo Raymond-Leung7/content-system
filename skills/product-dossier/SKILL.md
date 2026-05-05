@@ -1,7 +1,7 @@
 ---
 name: product-dossier
 description: |
-  Build structured product research dossiers for video script production. Triggers when user wants to collect product info, research a new product, or build a product knowledge base. The skill runs market-research-analysis first for industry context, then applies Raymond's self-built 10-dimension framework, injecting market-level findings at defined points. Output is 10 chapter files + 1 combined master file per product.
+  PRIMARY entry point for all product research. Use this when user wants to: 收集产品资料, 收集XX的产品资料, 做产品资料收集, 建产品资料库, 产品调研, 做产品调研, research a product, collect product info, build product dossier, product deep-dive for video script. Internally calls market-research-analysis for industry context, then applies Raymond's 10-dimension framework with layered injection. Output is 10 chapter files + 1 combined master per product. IMPORTANT: when user asks about a specific product (not a market/industry category), use this skill — not market-research-analysis alone.
 ---
 
 # Product Dossier Builder
