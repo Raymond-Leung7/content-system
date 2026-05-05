@@ -38,3 +38,7 @@ Proma 会自动完成所有操作。
 | **更新本地配置到仓库** | "请把我的本地配置推送到内容系统仓库" |
 | **拉取团队最新配置** | "帮我拉取最新的系统配置" |
 | **查看仓库状态** | "帮我看看内容系统仓库有什么变更" |
+
+**会推送的内容：** CLAUDE.md / TEAM.md / README.md / .gitignore / .context/team-note.md / templates/ 和 skills/ 目录下所有文件
+
+**不会推送的内容：** 个人记忆（memory/）、API key、本地配置文件。`.gitignore` 已配置保护规则，不会误提交隐私数据。
