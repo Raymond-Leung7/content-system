@@ -8,32 +8,57 @@
 ### 1. 安装 Proma
 从 [GitHub Releases](https://github.com/ErlichLiu/Proma/releases) 下载最新版桌面应用并安装。
 
-### 2. 克隆本仓库
+### 2. 配置 Proma 工作区
+
+本系统需要 **三个 Proma 工作区**，分别承担不同角色：
+
+| # | 工作区名称 | Slug | 角色 | 必要 Skills | 思考模式 |
+|---|-----------|------|------|-----------|---------|
+| 1 | **研究与资料** | research | 研究员 | xlsx, pdf, find-skills | 开启 |
+| 2 | **脚本与分镜** | script | 脚本写手 | xlsx, brainstorming, executing-plans | 开启 |
+| 3 | **管理与复盘** | management | 管理员 | tool-builder, find-skills, xlsx | 默认关闭 |
+
+在 Proma 中创建这三个工作区（设置 → 工作区 → 新建），记录各自的 Slug。
+
+### 3. 克隆本仓库到各工作区
+
+每个工作区都需要本仓库的配置。在 Shell 中执行或让 Agent 执行：
+
 ```bash
-cd ~/.proma/agent-workspaces/default/
-mv workspace-files workspace-files.bak   # 备份原有配置（如果有）
-git clone <本仓库地址> workspace-files
+# 对每个工作区依次执行
+for ws in research script management; do
+  cd ~/.proma/agent-workspaces/$ws/
+  git clone https://github.com/Raymond-Leung7/content-system.git workspace-files
+done
 ```
 
-### 3. 配置模型通道
+> 如果已有默认工作区（`default`），也需要执行：设置该工作区的 `workspace-files` 指向本仓库。
+
+### 4. 配置模型通道
 打开 Proma → 设置 → 通道，添加你的 API provider：
 - DeepSeek：`https://api.deepseek.com`（Anthropic 兼容）
 - 或使用 Proma 官方通道（含 Claude/GPT/Gemini 等）
 
 ⚠️ **绝对不要把 API key 提交到仓库。** 各自配置。
 
-### 4. 下载模板
+### 5. 下载模板
 分镜表模板等大文件存放在仓库的 `templates/` 目录中，克隆后自动获得。
 
-### 5. 验证
-打开 Proma → 新建 Agent 会话，问一句"我现在的角色是什么"。
-如果回答包含"幕后搭档 / B站数码科技内容生产"，说明 CLAUDE.md 已加载成功。
+### 6. 创建 Obsidian 目录
+新用户需在本地创建 Obsidian 内容目录。Agent 可代为执行：
+- 路径：`D:/Raymondstudio/`（或个人自定义路径，需同步更新 CLAUDE.md）
+- 必要子目录：`00-Inbox`, `01-选题/选题池/已立项`, `02-产品资料/品牌库`, `03-竞品分析`, `99-Archive`, `资产/语音`, `资产/音乐`, `资产/图片`
+
+### 7. 验证
+打开 Proma → 切换到每个工作区 → 新建 Agent 会话，问 Agent：
+- **"列出当前工作区配置"** — 应返回当前区的角色、Skills、思考模式
+- **"跑一次部署审计"** — Agent 应对照 CLAUDE.md 检查所有 infrastructure 项
 
 ---
 
 ## 二、日常工作流
 
-0. **资讯输入**：每天早上 08:00 自动抓取科技资讯到 `JJXS_Studio/00-Inbox/`
+0. **资讯输入**：每天早上 08:00 自动抓取科技资讯到 `D:/Raymondstudio/00-Inbox/`
 1. **选题**：从资讯池发现选题或自由提出
 2. **立项**：在 Proma 中说"立项 <产品名>"
 3. **产品资料**：Proma 按产品资料模板收集规格、评测、社区反馈。同一品牌的产品会复用品牌知识库（`02-产品资料/品牌库/`），避免重复研究品牌背景

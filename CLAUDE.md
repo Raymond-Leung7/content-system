@@ -118,8 +118,8 @@
 
 ## 重要目录
 
-- **Obsidian 内容资产目录**：`~/Documents/JJXS_Studio/`
-- **Obsidian 默认仓库**：JJXS_Studio
+- **Obsidian 内容资产目录**：`D:/Raymondstudio/`
+- **Obsidian 默认仓库**：Raymondstudio
 
 ## 工具环境
 
@@ -132,7 +132,7 @@
   - 音乐生成：`mmx music generate`（100/周）
   - 视觉理解：`mmx vision describe`
   - 网络搜索：`mmx search query`（首选用联网搜索，不用模型本地知识）
-- **输出目录**：语音 → `JJXS_Studio/资产/语音/`，音乐 → `JJXS_Studio/资产/音乐/`，图片 → `JJXS_Studio/资产/图片/`
+- **输出目录**：语音 → `D:/Raymondstudio/资产/语音/`，音乐 → `D:/Raymondstudio/资产/音乐/`，图片 → `D:/Raymondstudio/资产/图片/`
 
 ### Office 处理环境
 - **依赖**：openpyxl、python-docx、python-pptx、pypdf
@@ -187,12 +187,41 @@
 - **详细规则**：`workspaces/management-rules.md`
 
 ### 跨区衔接
-三个工作区通过 Obsidian（`~/Documents/JJXS_Studio/`）共享文件：
+三个工作区通过 Obsidian（`D:/Raymondstudio/`）共享文件：
 - 资讯/选题 → 管理与复盘区
 - 产品资料/竞品分析 → 研究与资料区 → Obsidian → 脚本与分镜区
 - 脚本/分镜 → Obsidian → 发布后 → 管理与复盘区做复盘
 
 切换工作区只在需要换阶段时发生。
+
+## 系统部署与审计
+
+**本文件是系统蓝图，不是参考文档。** 部署或重建系统时，必须逐项执行，不可只读不做。
+
+### 部署检查清单
+
+部署时逐项对账，全部通过才算部署完成：
+
+- [ ] **工作区数量与名称**：在 Proma 中注册了三个工作区（`agent-workspaces.json` 中有 3 条记录）
+- [ ] **工作区一（研究与资料）**：已创建，角色=研究员，Skills=xlsx/pdf/find-skills，思考=开启
+- [ ] **工作区二（脚本与分镜）**：已创建，角色=脚本写手，Skills=xlsx/brainstorming/executing-plans，思考=开启
+- [ ] **工作区三（管理与复盘）**：已创建，角色=管理员，Skills=tool-builder/find-skills/xlsx，思考=默认关闭
+- [ ] **各区的 Skills**：已按上述列表安装到各自工作区，不混装
+- [ ] **各区的 workspace-files**：已指向本仓库（内容生产系统配置）
+- [ ] **Obsidian 目录**：`D:/Raymondstudio/` 已存在且包含完整文件夹结构（00-Inbox ~ 99-Archive + 资产/）
+- [ ] **路径一致性**：所有文件中 Obsidian 路径统一为 `D:/Raymondstudio/`，无旧路径残留
+
+### 部署审计命令
+
+启动或切换工作区时，Agent 应先跑审计，确认 desired state = actual state：
+```
+check workspace count in agent-workspaces.json → 必须 = 3
+check skills per workspace → 必须匹配上述清单
+check Obsidian folder structure → 所有目录必须存在
+check CLAUDE.md path references → 无 ~/Documents/JJXS_Studio 残留
+```
+
+发现差异 → 立即补建，不等用户提醒。
 
 ## 禁止事项
 

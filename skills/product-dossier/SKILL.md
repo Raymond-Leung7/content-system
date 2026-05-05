@@ -31,8 +31,8 @@ Trigger when the user:
 Before any research begins:
 
 1. **Confirm the product** with user — exact model, configuration, and any known context (e.g., "I have the device" vs "no device yet")
-2. **Confirm the output directory** — default is `~/Documents/JJXS_Studio/02-产品资料/[产品名]/`
-3. **Check if there's an existing topic** in `~/Documents/JJXS_Studio/01-选题/`
+2. **Confirm the output directory** — default is `D:/Raymondstudio/02-产品资料/[产品名]/`
+3. **Check if there's an existing topic** in `D:/Raymondstudio/01-选题/`
 4. **Create the directory** and begin
 
 ---
