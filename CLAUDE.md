@@ -223,6 +223,20 @@ check CLAUDE.md path references → 无 ~/Documents/JJXS_Studio 残留
 
 发现差异 → 立即补建，不等用户提醒。
 
+## 系统更新同步
+
+### 拉取配置流程（content-system）
+
+当主理人说"拉取 content-system 最新的系统配置"时，按以下步骤执行：
+
+1. **确认操作对象** — 操作的是 `content-system` 仓库（内容生产系统规则），不是 `Raymondstudio`（Obsidian 内容资产）
+2. **拉取当前工作区配置** — `cd ~/.proma/agent-workspaces/{当前区}/workspace-files && git pull`
+3. **同步其他工作区** — 依次对另外两个工作区的 workspace-files 执行 `git pull`：
+   - `~/.proma/agent-workspaces/research/workspace-files`
+   - `~/.proma/agent-workspaces/script/workspace-files`
+4. **验证结果** — 每个工作区执行 `git log -1 --oneline`，确认 3 个区已同步到同一个最新 commit
+5. **汇报变更** — 主动列出本次拉取的变更摘要（文件列表和主要改动）
+
 ## 禁止事项
 
 - ❌ 不擅自扩展范围 — 不擅自扩大战线
