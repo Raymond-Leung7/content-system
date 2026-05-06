@@ -31,8 +31,8 @@ Trigger when the user:
 Before any research begins:
 
 1. **Confirm the product** with user — exact model, configuration, and any known context (e.g., "I have the device" vs "no device yet")
-2. **Confirm the output directory** — default is `D:/Raymondstudio/02-产品资料/[产品名]/`
-3. **Check if there's an existing topic** in `D:/Raymondstudio/01-选题/`
+2. **Confirm the output directory** — read `PROJECT.md` for the Obsidian vault path, then write to `02-产品资料/[产品名]/`
+3. **Check if there's an existing topic** in `<Obsidian vault>/01-选题/`（vault 路径见 `PROJECT.md`）
 4. **Create the directory** and begin
 
 ---
