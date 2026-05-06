@@ -1,5 +1,7 @@
 # CLAUDE.md — Proma Agent 长期项目知识库
 
+> ⚠️ 读取本文件后必须读取 `PROJECT.md`，确认本地项目身份和 Obsidian 路径。
+
 ## 系统目标与角色分工
 
 ### 唯一目标
@@ -118,8 +120,8 @@
 
 ## 重要目录
 
-- **Obsidian 内容资产目录**：`D:/Raymondstudio/`
-- **Obsidian 默认仓库**：Raymondstudio
+- **Obsidian 内容资产目录**：见 `PROJECT.md` 中的 Obsidian vault 路径
+- **Obsidian 默认仓库**：Raymondstudio（另一个项目，非当前项目）
 
 ## 工具环境
 
@@ -132,7 +134,7 @@
   - 音乐生成：`mmx music generate`（100/周）
   - 视觉理解：`mmx vision describe`
   - 网络搜索：`mmx search query`（首选用联网搜索，不用模型本地知识）
-- **输出目录**：无需额外配置，脚本产出写入 `D:/Raymondstudio/03-脚本/`，分镜表写入 `D:/Raymondstudio/04-分镜表/`
+- **输出目录**：脚本产出写入 Obsidian vault 的 `03-脚本/`，分镜表写入 `04-分镜表/`（vault 路径见 `PROJECT.md`）
 
 ### Office 处理环境
 - **依赖**：openpyxl、python-docx、python-pptx、pypdf
@@ -187,7 +189,7 @@
 - **详细规则**：`workspaces/management-rules.md`
 
 ### 跨区衔接
-三个工作区通过 Obsidian（`D:/Raymondstudio/`）共享文件：
+三个工作区通过 Obsidian vault（路径见 `PROJECT.md`）共享文件：
 - 资讯/选题 → 管理与复盘区
 - 产品资料（含竞品分析）→ 研究与资料区 → Obsidian → 脚本与分镜区
 - 脚本/分镜 → Obsidian → 发布后 → 管理与复盘区做复盘
@@ -208,8 +210,8 @@
 - [ ] **工作区三（管理与复盘）**：已创建，角色=管理员，Skills=tool-builder/find-skills/xlsx，思考=默认关闭
 - [ ] **各区的 Skills**：已按上述列表安装到各自工作区，不混装
 - [ ] **各区的 workspace-files**：已指向本仓库（内容生产系统配置）
-- [ ] **Obsidian 目录**：`D:/Raymondstudio/` 已存在且包含完整文件夹结构：`00-Inbox`, `01-选题`, `02-产品资料`, `03-脚本`, `04-分镜表`, `05-复盘`, `99-Archive`
-- [ ] **路径一致性**：所有文件中 Obsidian 路径统一为 `D:/Raymondstudio/`，无旧路径残留
+- [ ] **Obsidian 目录**：PROJECT.md 中的 vault 路径已存在且包含完整文件夹结构：`00-Inbox`, `01-选题`, `02-产品资料`, `03-脚本`, `04-分镜表`, `05-复盘`, `99-Archive`
+- [ ] **路径一致性**：所有文件中无硬编码的旧 Obsidian 路径残留（如 `D:/Raymondstudio/`、`~/Documents/JJXS_Studio`）
 
 ### 部署审计命令
 
@@ -218,7 +220,7 @@
 check workspace count in agent-workspaces.json → 必须 = 3
 check skills per workspace → 必须匹配上述清单
 check Obsidian folder structure → 必须包含：00-Inbox, 01-选题, 02-产品资料, 03-脚本, 04-分镜表, 05-复盘, 99-Archive
-check CLAUDE.md path references → 无 ~/Documents/JJXS_Studio 残留
+check CLAUDE.md path references → 无硬编码的旧 Obsidian 路径残留
 ```
 
 发现差异 → 立即补建，不等用户提醒。
