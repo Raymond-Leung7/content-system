@@ -31,6 +31,8 @@
 | brainstorming | proma 内置 | 创意构思、头脑风暴 | 脚本与分镜 |
 | executing-plans | proma 内置 | 执行计划、分步实施 | 脚本与分镜 |
 | tool-builder | proma 内置 | 创建和管理 Chat 工具 | 管理与复盘 |
+| humanizer-zh | .claude 生态 | 去除 AI 写作痕迹，24 种模式检测+质量评分 | 脚本与分镜（脚本润色阶段） |
+| karpathy-guidelines | .claude 生态 | LLM 编码防坑指南：先想再做、最小改动、验证标准 | 管理与复盘（工具开发时） |
 
 ## 安装说明
 

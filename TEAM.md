@@ -15,8 +15,8 @@
 | # | 工作区名称 | Slug | 角色 | 必要 Skills | 思考模式 |
 |---|-----------|------|------|-----------|---------|
 | 1 | **研究与资料** | research | 研究员 | xlsx, pdf, find-skills | 开启 |
-| 2 | **脚本与分镜** | script | 脚本写手 | xlsx, brainstorming, executing-plans | 开启 |
-| 3 | **管理与复盘** | management | 管理员 | tool-builder, find-skills, xlsx | 默认关闭 |
+| 2 | **脚本与分镜** | script | 脚本写手 | xlsx, brainstorming, executing-plans, humanizer-zh | 开启 |
+| 3 | **管理与复盘** | management | 管理员 | tool-builder, find-skills, xlsx, karpathy-guidelines | 默认关闭 |
 
 在 Proma 中创建这三个工作区（设置 → 工作区 → 新建），记录各自的 Slug。
 

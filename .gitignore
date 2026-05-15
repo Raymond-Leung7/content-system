@@ -11,9 +11,10 @@ memory/
 credentials*
 
 # API keys / tokens（绝对红线）
-*key*
-*token*
-*secret*
+*.key
+*api_key*
+*access_token*
+*client_secret*
 
 # macOS
 .DS_Store
